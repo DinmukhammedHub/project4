@@ -34,7 +34,40 @@
   </head>
   <body class="bg-[#0f0e0d] text-[#e8e2d8] antialiased selection:bg-[#c99a5b] selection:text-black">
     <div id="root"></div>
+
+    <!-- Development Vite entry point (intercepted in dev server) -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Fallback loader for GitHub Pages / static hosting -->
+    <script>
+      (function() {
+        var isStaticHost = window.location.hostname.indexOf('github.io') !== -1 || window.location.protocol === 'file:';
+
+        function loadStaticBundle() {
+          var root = document.getElementById('root');
+          if (root && root.childElementCount === 0) {
+            // Append CSS
+            if (!document.querySelector('link[href*="index.css"]')) {
+              var css = document.createElement('link');
+              css.rel = 'stylesheet';
+              css.href = './assets/index.css';
+              document.head.appendChild(css);
+            }
+            // Append JS module
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.crossOrigin = 'anonymous';
+            script.src = './assets/index.js';
+            document.body.appendChild(script);
+          }
+        }
+
+        if (isStaticHost) {
+          loadStaticBundle();
+        } else {
+          setTimeout(loadStaticBundle, 300);
+        }
+      })();
+    </script>
   </body>
 </html>
-
