@@ -1,11 +1,16 @@
 import { Poet, CardGuideAnswer, MovementComparison, MovementComparisonCriteria, QuizQuestion } from '../types';
+import heroStall from '../assets/images/hero_imaginism_stall_1790180249040.jpg';
+import yesenin from '../assets/images/portrait_yesenin_1790180266669.jpg';
+import mariengof from '../assets/images/portrait_mariengof_1790180284152.jpg';
+import shershenevich from '../assets/images/portrait_shershenevich_1790180298837.jpg';
+import avantgardeAction from '../assets/images/avantgarde_action_1919_1790180313166.jpg';
 
 export const IMAGES = {
-  heroStall: '/src/assets/images/hero_imaginism_stall_1790180249040.jpg',
-  yesenin: '/src/assets/images/portrait_yesenin_1790180266669.jpg',
-  mariengof: '/src/assets/images/portrait_mariengof_1790180284152.jpg',
-  shershenevich: '/src/assets/images/portrait_shershenevich_1790180298837.jpg',
-  avantgardeAction: '/src/assets/images/avantgarde_action_1919_1790180313166.jpg',
+  heroStall,
+  yesenin,
+  mariengof,
+  shershenevich,
+  avantgardeAction,
 };
 
 export const POETS_LIST: Poet[] = [
