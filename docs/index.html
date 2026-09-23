@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Ensure window.fetch has a setter if the browser / iframe environment defines it with getter only
+      try {
+        const originalFetch = window.fetch;
+        let currentFetch = originalFetch;
+        Object.defineProperty(window, 'fetch', {
+          get() {
+            return currentFetch;
+          },
+          set(newFetch) {
+            currentFetch = newFetch;
+          },
+          configurable: true,
+          enumerable: true
+        });
+      } catch (e) {
+        // Fallback or ignore if already configurable
+      }
+    </script>
+    <title>Имажинизм: Поэзия Серебряного века</title>
+    <meta name="description" content="Интерактивный мультимедийный проект про имажинизм: манифесты, поэтика образа, кафе «Стойло Пегаса», поэты (Есенин, Мариенгоф, Шершеневич) и сравнительная таблица течений Серебряного века." />
+    <meta property="og:title" content="Имажинизм: Поэзия Серебряного века" />
+    <meta property="og:description" content="Интерактивный мультимедийный проект про имажинизм: манифесты, поэтика образа, кафе «Стойло Пегаса», поэты (Есенин, Мариенгоф, Шершеневич) и сравнительная таблица течений Серебряного века." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="./assets/index-CQZlFjiB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dsf4ZOzY.css">
+  </head>
+  <body class="bg-[#0f0e0d] text-[#e8e2d8] antialiased selection:bg-[#c99a5b] selection:text-black">
+    <div id="root"></div>
+  </body>
+</html>
+
